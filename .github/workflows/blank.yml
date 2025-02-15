@@ -1,0 +1,148 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+photography-portfolio/
+  ├── index.html
+  ├── assets/
+  │   └── images/
+  ├── styles/
+  │   └── main.css
+  ├── about.html
+  ├── projects.html
+  ├── contact.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Csaba Kolbai Photography</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header>
+    <h1>Csaba Kolbai Photography</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="analogue.html">Analogue/Cameraless</a></li>
+        <li><a href="digital.html">Digital Photographs</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="commercial.html">Commercial</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div class="intro">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Explore my photographic work, from analogue to digital, and learn about my journey in the art of capturing the world.</p>
+      </div>
+      <div class="photos">
+        <div class="photo">
+          <img src="assets/images/photo1.jpg" alt="Photo 1">
+        </div>
+        <div class="photo">
+          <img src="assets/images/photo2.jpg" alt="Photo 2">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Csaba Kolbai Photography. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+.intro {
+  margin-bottom: 20px;
+}
+
+.photos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.photos .photo {
+  width: 45%;
+}
+
+.photos img {
+  width: 100%;
+  height: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+}
